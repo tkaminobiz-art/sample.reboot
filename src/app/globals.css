@@ -10,21 +10,22 @@
 
 :root {
   /* Colors */
-  --color-primary: #0f2350;
-  /* Deep Navy for trust/sincerity */
-  --color-primary-light: #1e3a8a;
-  --color-accent: #e11d48;
-  /* Subtle accent if needed */
+  --color-primary: #00274c;
+  /* Deep Navy: Authority & Trust */
+  --color-primary-light: #89abde;
+  /* Light Blue: Openness */
+  --color-accent: #f37021;
+  /* Vibrant Orange: Warmth & Vitality (Replaces Red) */
   --color-background: #ffffff;
-  --color-background-soft: #f8f9fa;
-  /* Light gray for sections */
+  --color-background-soft: #f4ecd8;
+  /* Beige: Comfort (matches Washi) */
   --color-text: #333333;
   --color-text-light: #666666;
   --color-border: #e5e7eb;
 
   /* Typography */
-  --font-base: "Noto Sans JP", sans-serif;
-  --font-heading: "Noto Sans JP", sans-serif;
+  --font-base: "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Times New Roman", serif;
   /* Can switch to serif if requested */
 
   /* Spacing */
@@ -41,7 +42,11 @@
 body {
   font-family: var(--font-base);
   color: var(--color-text);
-  background-color: var(--color-background);
+  /* Washi Texture Background */
+  background-color: #fcfbf9;
+  background-image: url('/images/washi_texture_bg.png');
+  background-repeat: repeat;
+  background-blend-mode: multiply;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -68,6 +73,7 @@ a {
 
 /* Typography Utilities */
 .heading-xl {
+  font-family: var(--font-heading);
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
@@ -75,6 +81,7 @@ a {
 }
 
 .heading-lg {
+  font-family: var(--font-heading);
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 2rem;
@@ -82,6 +89,7 @@ a {
 }
 
 .heading-md {
+  font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;

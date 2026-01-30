@@ -35,7 +35,7 @@
 }
 
 .accent {
-    color: #c90000;
+    color: var(--color-accent);
 }
 
 .bodyContent {

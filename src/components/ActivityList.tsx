@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import styles from './ActivityList.module.css';
+import FadeIn from './FadeIn';
 
 const activities = [
     {
@@ -41,7 +42,7 @@ export default function ActivityList() {
     return (
         <section id="activity" className={styles.section}>
             <div className={styles.container}>
-                <div className={styles.header}>
+                <FadeIn className={styles.header}>
                     <div className={styles.titleGroup}>
                         <span className={styles.label}>ACTIVITY</span>
                         <h2 className={styles.title}>活動報告</h2>
@@ -49,26 +50,28 @@ export default function ActivityList() {
                     <Link href="/activity" className={styles.link}>
                         一覧を見る <ChevronRight size={18} />
                     </Link>
-                </div>
+                </FadeIn>
 
                 <div className={styles.list}>
-                    {activities.map((item) => (
-                        <Link key={item.id} href={`/activity/${item.id}`} className={styles.item}>
-                            <div className={styles.dateBox}>
-                                <span className={styles.year}>{item.year}</span>
-                                <span className={styles.date}>{item.date}</span>
-                            </div>
-                            <div className={styles.content}>
-                                <span className={`
-                  ${styles.category} 
-                  ${item.category === 'parliament' ? styles.parliament : ''}
-                  ${item.category === 'local' ? styles.local : ''}
-                `}>
-                                    {item.categoryLabel}
-                                </span>
-                                <h3 className={styles.itemTitle}>{item.title}</h3>
-                            </div>
-                        </Link>
+                    {activities.map((item, index) => (
+                        <FadeIn key={item.id} delay={index * 100}>
+                            <Link href={`/activity/${item.id}`} className={styles.item}>
+                                <div className={styles.dateBox}>
+                                    <span className={styles.year}>{item.year}</span>
+                                    <span className={styles.date}>{item.date}</span>
+                                </div>
+                                <div className={styles.content}>
+                                    <span className={`
+                      ${styles.category} 
+                      ${item.category === 'parliament' ? styles.parliament : ''}
+                      ${item.category === 'local' ? styles.local : ''}
+                    `}>
+                                        {item.categoryLabel}
+                                    </span>
+                                    <h3 className={styles.itemTitle}>{item.title}</h3>
+                                </div>
+                            </Link>
+                        </FadeIn>
                     ))}
                 </div>
             </div>

@@ -1,0 +1,138 @@
+.section {
+    padding: 8rem 0;
+    background-color: #fcfbf9;
+    /* Warm off-white, paper-like */
+    background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+}
+
+/* Vertical Title Layout */
+.headingParams {
+    flex-shrink: 0;
+    padding-right: 2rem;
+    border-right: 1px solid #ccc;
+}
+
+.verticalTitle {
+    writing-mode: vertical-rl;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 2rem;
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+    color: #0f2350;
+    /* Navy */
+    height: 280px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.accent {
+    color: #c90000;
+    /* Deep Red for emphasis */
+}
+
+/* Body Content */
+.bodyContent {
+    flex-grow: 1;
+    max-width: 600px;
+    text-align: left;
+}
+
+.subTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f2350;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    border-bottom: 2px solid #0f2350;
+    padding-bottom: 1rem;
+    display: inline-block;
+}
+
+.text {
+    font-size: 1rem;
+    line-height: 2.2;
+    /* Generous line height for readability */
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-feature-settings: "palt";
+    text-align: justify;
+}
+
+.signature {
+    margin-top: 3rem;
+    text-align: right;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.position {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f2350;
+}
+
+.mobileBr {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .headingParams {
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .verticalTitle {
+        writing-mode: horizontal-tb;
+        /* Switch to horizontal on mobile */
+        height: auto;
+        font-size: 1.8rem;
+        text-align: center;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .bodyContent {
+        width: 100%;
+    }
+
+    .subTitle {
+        font-size: 1.25rem;
+        width: 100%;
+        text-align: left;
+    }
+
+    .mobileBr {
+        display: inline;
+    }
+}

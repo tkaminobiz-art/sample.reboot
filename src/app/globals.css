@@ -1,18 +1,32 @@
+@media (pointer: fine) {
+
+  html,
+  body,
+  a,
+  button {
+    cursor: none;
+  }
+}
+
 :root {
   /* Colors */
-  --color-primary: #0f2350; /* Deep Navy for trust/sincerity */
+  --color-primary: #0f2350;
+  /* Deep Navy for trust/sincerity */
   --color-primary-light: #1e3a8a;
-  --color-accent: #e11d48; /* Subtle accent if needed */
+  --color-accent: #e11d48;
+  /* Subtle accent if needed */
   --color-background: #ffffff;
-  --color-background-soft: #f8f9fa; /* Light gray for sections */
+  --color-background-soft: #f8f9fa;
+  /* Light gray for sections */
   --color-text: #333333;
   --color-text-light: #666666;
   --color-border: #e5e7eb;
 
   /* Typography */
   --font-base: "Noto Sans JP", sans-serif;
-  --font-heading: "Noto Sans JP", sans-serif; /* Can switch to serif if requested */
-  
+  --font-heading: "Noto Sans JP", sans-serif;
+  /* Can switch to serif if requested */
+
   /* Spacing */
   --spacing-container: 1200px;
   --spacing-padding: 1.5rem;

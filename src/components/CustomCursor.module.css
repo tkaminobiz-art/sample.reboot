@@ -1,0 +1,33 @@
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    /* Center on mouse */
+    transition: width 0.2s, height 0.2s;
+    mix-blend-mode: normal;
+    /* Normal ensures face color is seen */
+    /* Remove native cursor? We can do that in global CSS */
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fcfbf9;
+}
+
+/* Optional: Hide on mobile just in case js check fails */
+@media (max-width: 768px) {
+    .cursor {
+        display: none !important;
+    }
+}

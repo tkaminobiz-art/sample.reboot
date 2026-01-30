@@ -1,0 +1,113 @@
+.section {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.label {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-accent);
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    max-width: var(--spacing-container);
+    margin: 0 auto;
+    padding: 0 var(--spacing-padding);
+}
+
+.card {
+    background-color: var(--color-background-soft);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-top-color: var(--color-primary);
+}
+
+.number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(15, 35, 80, 0.1);
+    /* Primary color but very faint */
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cardText {
+    font-size: 1rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+}
+
+.cardDetail {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.detailItem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
+.checkIcon {
+    color: var(--color-accent);
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

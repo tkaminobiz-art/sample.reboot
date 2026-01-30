@@ -1,0 +1,155 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    /* Full viewport height minus header roughly */
+    max-height: 800px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Text on right since person is on left */
+    overflow: hidden;
+    margin-top: 80px;
+    /* Offset fixed header */
+}
+
+/* Background Image Container */
+.bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.8) 100%);
+    z-index: 0;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    padding-right: 10%;
+    /* Place text on the right */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align text block */
+}
+
+/* Vertical Text Container */
+.sloganContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    /* Right to left for vertical lines */
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    height: 400px;
+    /* Constrain height for vertical text */
+}
+
+.sloganMain {
+    writing-mode: vertical-rl;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.sloganSub {
+    writing-mode: vertical-rl;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    border-left: 1px solid var(--color-primary);
+    /* Visual separator */
+    padding-left: 1rem;
+}
+
+.candidateInfo {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid var(--color-primary);
+}
+
+.title {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.nameEn {
+    font-size: 1rem;
+    color: var(--color-primary-light);
+    margin-left: 1rem;
+    font-weight: 500;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 500px;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 2rem;
+    }
+
+    .overlay {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 70%);
+    }
+
+    .content {
+        padding-right: 0;
+        align-items: center;
+        width: 100%;
+    }
+
+    .sloganContainer {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .sloganMain,
+    .sloganSub {
+        writing-mode: horizontal-tb;
+        text-align: center;
+        border: none;
+        padding: 0;
+    }
+
+    .sloganMain {
+        font-size: 2rem;
+    }
+
+    .sloganSub {
+        font-size: 1rem;
+    }
+}

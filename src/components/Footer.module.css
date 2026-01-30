@@ -1,0 +1,65 @@
+.footer {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 80px 0 20px;
+}
+
+.container {
+    max-width: var(--spacing-container);
+    margin: 0 auto;
+    padding: 0 var(--spacing-padding);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.officeTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--color-accent);
+}
+
+.officeInfo p {
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.mapLink {
+    display: inline-block;
+    margin-top: 1rem;
+    color: white;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.navLink {
+    font-weight: 700;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.navLink:hover {
+    opacity: 1;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}

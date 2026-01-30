@@ -1,155 +1,136 @@
 .hero {
     position: relative;
+    height: 100vh;
     width: 100%;
-    height: 90vh;
-    /* Full viewport height minus header roughly */
-    max-height: 800px;
-    min-height: 600px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    /* Text on right since person is on left */
+    justify-content: center;
     overflow: hidden;
-    margin-top: 80px;
-    /* Offset fixed header */
+    /* Background Image styling */
+    background-image: url('/images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* Background Image Container */
-.bgImage {
+/* Overlay to improve text readability on mobile/desktop */
+.hero::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.8) 100%);
-    z-index: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) 60%,
+            rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
 }
 
 .content {
     position: relative;
-    z-index: 10;
-    padding-right: 10%;
-    /* Place text on the right */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    /* Align text block */
+    z-index: 2;
+    /* Ensure content is above overlay */
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
 }
 
-/* Vertical Text Container */
-.sloganContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    /* Right to left for vertical lines */
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-    height: 400px;
-    /* Constrain height for vertical text */
+.nameBox {
+    background-color: rgba(255, 255, 255, 0.85);
+    /* Slightly more opaque */
+    backdrop-filter: blur(8px);
+    /* Increased blur */
+    padding: 3rem 4rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: inline-block;
 }
 
-.sloganMain {
-    writing-mode: vertical-rl;
+.jpName {
+    display: block;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
     font-size: 3.5rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: #0f2350;
+    letter-spacing: 0.3em;
+    margin-bottom: 0.5rem;
     line-height: 1.2;
-    letter-spacing: 0.1em;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
-.sloganSub {
-    writing-mode: vertical-rl;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-text);
-    line-height: 1.5;
-    letter-spacing: 0.05em;
-    border-left: 1px solid var(--color-primary);
-    /* Visual separator */
-    padding-left: 1rem;
-}
-
-.candidateInfo {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 1.5rem 2.5rem;
-    border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-left: 6px solid var(--color-primary);
-}
-
-.title {
+.enName {
     display: block;
+    font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 1rem;
-    font-weight: 700;
-    color: var(--color-text-light);
+    letter-spacing: 0.4em;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.catchphrase {
+    margin-top: 3rem;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Added shadow */
+}
+
+.catchMain {
+    display: block;
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
-.name {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    line-height: 1;
+.catchSub {
+    display: block;
+    font-size: 1.5rem;
 }
 
-.nameEn {
-    font-size: 1rem;
-    color: var(--color-primary-light);
-    margin-left: 1rem;
-    font-weight: 500;
-}
-
-/* Mobile Responsiveness */
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .hero {
-        height: auto;
-        min-height: 500px;
-        justify-content: center;
-        align-items: flex-end;
-        padding-bottom: 2rem;
+        background-position: 65% center;
+        /* Shift bg to show face on mobile if possible, tweak as needed */
     }
 
-    .overlay {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 70%);
-    }
-
-    .content {
-        padding-right: 0;
-        align-items: center;
+    /* Darker overlay on mobile for better contrast */
+    .hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        z-index: 1;
     }
 
-    .sloganContainer {
-        flex-direction: column;
-        height: auto;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 2rem;
+    .nameBox {
+        padding: 2rem;
+        width: 90%;
+        margin: 0 auto;
     }
 
-    .sloganMain,
-    .sloganSub {
-        writing-mode: horizontal-tb;
-        text-align: center;
-        border: none;
-        padding: 0;
+    .jpName {
+        font-size: 2.5rem;
+        letter-spacing: 0.2em;
     }
 
-    .sloganMain {
-        font-size: 2rem;
+    .enName {
+        font-size: 0.8rem;
     }
 
-    .sloganSub {
+    .catchphrase {
+        margin-top: 5rem;
+        /* Push down to separate from face if possible */
+    }
+
+    .catchMain {
+        font-size: 1.75rem;
+    }
+
+    .catchSub {
         font-size: 1rem;
     }
 }

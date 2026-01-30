@@ -1,7 +1,6 @@
 .section {
     padding: 8rem 0;
     background-color: #fcfbf9;
-    /* Warm off-white, paper-like */
     background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
     background-size: 20px 20px;
 }
@@ -17,7 +16,6 @@
     gap: 4rem;
 }
 
-/* Vertical Title Layout */
 .headingParams {
     flex-shrink: 0;
     padding-right: 2rem;
@@ -31,7 +29,6 @@
     line-height: 1.8;
     letter-spacing: 0.1em;
     color: #0f2350;
-    /* Navy */
     height: 280px;
     display: flex;
     justify-content: space-between;
@@ -39,10 +36,8 @@
 
 .accent {
     color: #c90000;
-    /* Deep Red for emphasis */
 }
 
-/* Body Content */
 .bodyContent {
     flex-grow: 1;
     max-width: 600px;
@@ -64,7 +59,6 @@
 .text {
     font-size: 1rem;
     line-height: 2.2;
-    /* Generous line height for readability */
     color: #333;
     margin-bottom: 1.5rem;
     font-feature-settings: "palt";
@@ -96,17 +90,24 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .section {
+        padding: 4rem 0;
+        /* Reduced padding on mobile */
+    }
+
     .container {
         flex-direction: column;
         align-items: center;
         gap: 2rem;
+        /* Reduced gap */
     }
 
     .headingParams {
         padding-right: 0;
         border-right: none;
         border-bottom: 1px solid #ccc;
-        padding-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        /* Reduced padding */
         width: 100%;
         display: flex;
         justify-content: center;
@@ -114,12 +115,13 @@
 
     .verticalTitle {
         writing-mode: horizontal-tb;
-        /* Switch to horizontal on mobile */
         height: auto;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        /* Slightly smaller for mobile context */
         text-align: center;
         flex-direction: column;
         gap: 0.5rem;
+        line-height: 1.4;
     }
 
     .bodyContent {
@@ -127,9 +129,17 @@
     }
 
     .subTitle {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         width: 100%;
         text-align: left;
+        margin-bottom: 1.5rem;
+    }
+
+    .text {
+        font-size: 0.95rem;
+        /* Slightly smaller for density */
+        line-height: 1.9;
+        margin-bottom: 1rem;
     }
 
     .mobileBr {

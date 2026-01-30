@@ -1,22 +1,24 @@
 import Image from 'next/image';
+import { Sprout, Shield, School } from 'lucide-react';
 import styles from './PolicySection.module.css';
+import FadeIn from './FadeIn';
 
 export default function PolicySection() {
     return (
         <section id="policy" className={styles.section}>
             <div className={styles.container}>
-                <div className={styles.header}>
+                <FadeIn className={styles.header}>
                     <span className={styles.enTitle}>POLICY</span>
                     <h2 className={styles.jpTitle}>3つの重点政策</h2>
                     <p className={styles.intro}>
                         現場の声を基に練り上げた、<br className={styles.mobileOnly} />
                         具体的かつ実行可能な3つの約束。
                     </p>
-                </div>
+                </FadeIn>
 
                 <div className={styles.contentList}>
                     {/* Policy 01 */}
-                    <article className={styles.article}>
+                    <FadeIn delay={200} className={styles.article}>
                         <div className={styles.articleHeader}>
                             <span className={styles.number}>01</span>
                             <h3 className={styles.articleTitle}>
@@ -26,9 +28,9 @@ export default function PolicySection() {
                         </div>
                         <div className={styles.articleBody}>
                             <div className={styles.imageWrapper}>
-                                <div className={styles.imagePlaceholder}>
-                                    {/* Ideally replace with real image later */}
-                                    <span className={styles.placeholderText}>Agriculture & Tourism</span>
+                                <div className={`${styles.visualBox} ${styles.greenTheme}`}>
+                                    <Sprout size={48} className={styles.icon} />
+                                    <span className={styles.visualLabel}>Agriculture & Tourism</span>
                                 </div>
                             </div>
                             <div className={styles.textWrapper}>
@@ -40,10 +42,10 @@ export default function PolicySection() {
                                 </p>
                             </div>
                         </div>
-                    </article>
+                    </FadeIn>
 
                     {/* Policy 02 */}
-                    <article className={styles.article}>
+                    <FadeIn delay={400} className={styles.article}>
                         <div className={styles.articleHeader}>
                             <span className={styles.number}>02</span>
                             <h3 className={styles.articleTitle}>
@@ -53,8 +55,9 @@ export default function PolicySection() {
                         </div>
                         <div className={styles.articleBody}>
                             <div className={styles.imageWrapper}>
-                                <div className={`${styles.imagePlaceholder} ${styles.blueBg}`}>
-                                    <span className={styles.placeholderText}>Infrastructure</span>
+                                <div className={`${styles.visualBox} ${styles.blueTheme}`}>
+                                    <Shield size={48} className={styles.icon} />
+                                    <span className={styles.visualLabel}>Infrastructure</span>
                                 </div>
                             </div>
                             <div className={styles.textWrapper}>
@@ -66,10 +69,10 @@ export default function PolicySection() {
                                 </p>
                             </div>
                         </div>
-                    </article>
+                    </FadeIn>
 
                     {/* Policy 03 */}
-                    <article className={styles.article}>
+                    <FadeIn delay={600} className={styles.article}>
                         <div className={styles.articleHeader}>
                             <span className={styles.number}>03</span>
                             <h3 className={styles.articleTitle}>
@@ -79,8 +82,9 @@ export default function PolicySection() {
                         </div>
                         <div className={styles.articleBody}>
                             <div className={styles.imageWrapper}>
-                                <div className={`${styles.imagePlaceholder} ${styles.greenBg}`}>
-                                    <span className={styles.placeholderText}>Education</span>
+                                <div className={`${styles.visualBox} ${styles.orangeTheme}`}>
+                                    <School size={48} className={styles.icon} />
+                                    <span className={styles.visualLabel}>Education</span>
                                 </div>
                             </div>
                             <div className={styles.textWrapper}>
@@ -92,7 +96,7 @@ export default function PolicySection() {
                                 </p>
                             </div>
                         </div>
-                    </article>
+                    </FadeIn>
                 </div>
             </div>
         </section>
